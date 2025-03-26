@@ -1,0 +1,11 @@
+black==25.1.0
+dotenv==0.9.9
+langchain==0.3.21
+langchain-community==0.3.20
+langchain-core==0.3.48
+langchain-openai==0.3.10
+langchain-text-splitters==0.3.7
+langsmith>=0.1.9
+openai>=1.0.0
+python-dotenv==1.1.0
+ruff==0.11.2
