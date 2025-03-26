@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 load_dotenv()
 
 # Basic example of two agents "debating"
-llm = ChatOpenAI()
+llm = ChatOpenAI(model="gpt-4")
 topic = "Pineapple belongs on pizza."
 agent_1 = SystemMessage(content="You are Agent A. You strongly AGREE with the topic.")
 agent_2 = SystemMessage(
