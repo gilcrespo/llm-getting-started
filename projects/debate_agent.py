@@ -1,11 +1,18 @@
+"""
+debate_agent.py
+
+A simple LangChain demo where two agents debate a topic using different system prompts.
+Simulates disagreement and turn-based dialogue using ChatOpenAI and message history.
+
+Concepts: agent disagreement, system prompts, turn-based dialogue
+"""
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
-# Basic example of two agents "debating"
-llm = ChatOpenAI(model="gpt-4")
+llm = ChatOpenAI(model="gpt-4o-mini")
 topic = "Pineapple belongs on pizza."
 agent_1 = SystemMessage(content="You are Agent A. You strongly AGREE with the topic.")
 agent_2 = SystemMessage(

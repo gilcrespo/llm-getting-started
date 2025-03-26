@@ -21,8 +21,10 @@ cp .env.sample .env
 # Fill in your OpenAI / LangSmith API keys
 
 # Run an example project
-python3 projects/debate_agent/main.py
+python3 debate_agent.py
 ```
+
+> ⚠️ Scripts are now located at the top level, not inside subfolders. For example, use `debate_agent.py` instead of `projects/debate_agent/main.py`.
 
 ---
 
@@ -44,14 +46,44 @@ ruff check .
 
 ## Project Index
 
-| Level           | Project                         | Concepts Practiced                    |
-| --------------- | ------------------------------- | ------------------------------------- |
-| 🟢 Beginner     | Zero/Few-Shot Prompt Playground | Prompt patterns, zero-shot thinking   |
-| 🟢 Beginner     | Simple ChatBot with Memory      | LangChain memory                      |
-| 🟡 Intermediate | LLM Agent Debate                | System prompts, disagreement modeling |
-| 🟡 Intermediate | Role-Based Support Assistant    | Formatting, role control              |
-| 🔴 Advanced     | Retrieval QA from Local Docs    | Vectorstores, retrieval chain         |
-| 🔴 Advanced     | Multi-Agent Task Planner (WIP)  | LangGraph, agent chaining             |
+| Level           | Project                         | Concepts Practiced                     |
+| --------------- | ------------------------------- | -------------------------------------- |
+| 🟢 Beginner     | Zero/Few-Shot Prompt Playground | Prompt patterns, zero-shot thinking    |
+| 🟢 Beginner     | Simple ChatBot with Memory      | interactive session, short-term memory |
+|                 |
+| 🟡 Intermediate | LLM Agent Debate                | System prompts, disagreement modeling  |
+| 🟡 Intermediate | Role-Based Support Assistant    | Formatting, role control               |
+| 🔴 Advanced     | Retrieval QA from Local Docs    | Vectorstores, retrieval chain          |
+| 🔴 Advanced     | Multi-Agent Task Planner (WIP)  | LangGraph, agent chaining              |
+
+---
+
+## Concept Reference Guide
+
+Each script lists "Concepts" it demonstrates. Here's what they mean:
+
+### LLM Behaviors (Descriptive)
+
+| Behavior                         | Concept                                 |
+| -------------------------------- | --------------------------------------- |
+| No examples given                | zero-shot reasoning                     |
+| Examples in prompt               | few-shot prompting                      |
+| Explicit persona or tone         | system prompts, persona control         |
+| Responds to previous turns       | short-term memory, conversation history |
+| Simulates disagreement or debate | agent disagreement                      |
+| Builds on previous answers       | turn-based dialogue                     |
+| Explains steps                   | chain of thought                        |
+
+### Interaction Patterns
+
+| Structure/Flow                  | Concept                 |
+| ------------------------------- | ----------------------- |
+| Live user input loop            | interactive session     |
+| Two or more agents taking turns | multi-agent interaction |
+| Message-based prompt passing    | conversational flow     |
+| Uses tools or actions           | tool execution          |
+
+Use these as a reference when reading or extending scripts.
 
 ---
 
