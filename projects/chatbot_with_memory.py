@@ -2,25 +2,36 @@
 chatbot_with_memory.py
 
 A basic conversational chatbot with short-term memory using LangChain.
-Remembers previous messages in the current session using ConversationBufferMemory.
+Remembers previous messages in the current session using RunnableWithMessageHistory.
 
-Concepts: conversation chaining, interactive session
+Concepts: conversational flow, interactive session, short-term memory
 """
+
 from dotenv import load_dotenv
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
-# Basic example of a chatbot with memory
+session_id = "demo_session"
+history_store = {}
+
+
+def get_history(session_id: str) -> InMemoryChatMessageHistory:
+    if session_id not in history_store:
+        history_store[session_id] = InMemoryChatMessageHistory()
+    return history_store[session_id]
+
+
 llm = ChatOpenAI(model="gpt-4o-mini")
-memory = ConversationBufferMemory()
-conversation = ConversationChain(llm=llm, memory=memory)
+chain = RunnableWithMessageHistory(llm, get_history)
 
 while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit"]:
         break
-    response = conversation.predict(input=user_input)
-    print("Bot:", response)
+    response = chain.invoke(
+        input=user_input, config={"configurable": {"session_id": session_id}}
+    )
+    print("Bot:", response.content)

@@ -1,7 +1,6 @@
 # LLM Getting Started
 
-A growing collection of practical, beginner-friendly LLM projects using **Python**, **LangChain**, and **LangSmith**.  
-Designed to help you learn by building real concepts — from basic prompting to multi-agent coordination.
+A growing collection of practical, beginner-friendly projects using **Python**, **LangChain**, and **LangSmith** to explore modern LLM patterns.
 
 > Inspired by the [LLM Engineering Cheatsheet](https://github.com/mlane/llm-engineering-cheatsheet)
 
@@ -21,10 +20,8 @@ cp .env.sample .env
 # Fill in your OpenAI / LangSmith API keys
 
 # Run an example project
-python3 debate_agent.py
+python3 projects/debate_agent.py
 ```
-
-> ⚠️ Scripts are now located at the top level, not inside subfolders. For example, use `debate_agent.py` instead of `projects/debate_agent/main.py`.
 
 ---
 
@@ -44,23 +41,27 @@ ruff check .
 
 ---
 
-## Project Index
+## Project Roadmap & Learning Path
 
-| Level           | Project                         | Concepts Practiced                     |
-| --------------- | ------------------------------- | -------------------------------------- |
-| 🟢 Beginner     | Zero/Few-Shot Prompt Playground | Prompt patterns, zero-shot thinking    |
-| 🟢 Beginner     | Simple ChatBot with Memory      | interactive session, short-term memory |
-|                 |
-| 🟡 Intermediate | LLM Agent Debate                | System prompts, disagreement modeling  |
-| 🟡 Intermediate | Role-Based Support Assistant    | Formatting, role control               |
-| 🔴 Advanced     | Retrieval QA from Local Docs    | Vectorstores, retrieval chain          |
-| 🔴 Advanced     | Multi-Agent Task Planner (WIP)  | LangGraph, agent chaining              |
+This repo will grow over time. Projects are grouped by complexity to help you build intuition as LLM concepts evolve from simple to advanced.
+
+✅ = Implemented & ready to run  
+💡 = Planned or conceptual for now
+
+| Level           | Project                         | Concepts Practiced                     | Status |
+| --------------- | ------------------------------- | -------------------------------------- | ------ |
+| 🟢 Beginner     | Simple ChatBot with Memory      | Interactive session, short-term memory | ✅     |
+| 🟢 Beginner     | Zero/Few-Shot Prompt Playground | Prompt patterns, zero-shot thinking    | 💡     |
+| 🟡 Intermediate | LLM Agent Debate                | System prompts, disagreement modeling  | ✅     |
+| 🟡 Intermediate | Role-Based Support Assistant    | Formatting, role control               | 💡     |
+| 🔴 Advanced     | Retrieval QA from Local Docs    | Vectorstores, retrieval chain          | 💡     |
+| 🔴 Advanced     | Multi-Agent Task Planner        | LangGraph, agent chaining              | 💡     |
 
 ---
 
-## Concept Reference Guide
+## Concept Glossary
 
-Each script lists "Concepts" it demonstrates. Here's what they mean:
+Each script lists one or more of the following **concepts** it demonstrates:
 
 ### LLM Behaviors (Descriptive)
 
@@ -88,6 +89,8 @@ Use these as a reference when reading or extending scripts.
 ---
 
 ## Philosophy
+
+We believe the best way to learn LLMs is by **doing** — each script is small, focused, and teaches a core idea.
 
 This repo is built to be:
 
