@@ -7,7 +7,7 @@ Designed to help you learn by building real concepts — from basic prompting to
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 git clone https://github.com/mlane/llm-getting-started.git
@@ -26,7 +26,7 @@ python3 projects/debate_agent/main.py
 
 ---
 
-## 🧰 Python Standards
+## Python Standards
 
 - **Python version**: 3.11+
 - **Formatter**: [`black`](https://github.com/psf/black)
@@ -42,7 +42,7 @@ ruff check .
 
 ---
 
-## 🧪 Project Index
+## Project Index
 
 | Level           | Project                         | Concepts Practiced                    |
 | --------------- | ------------------------------- | ------------------------------------- |
@@ -55,7 +55,7 @@ ruff check .
 
 ---
 
-## 🧠 Philosophy
+## Philosophy
 
 This repo is built to be:
 
@@ -66,7 +66,7 @@ This repo is built to be:
 
 ---
 
-## 📄 License
+## License
 
 [MIT](./LICENSE)
 
