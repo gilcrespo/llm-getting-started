@@ -29,10 +29,12 @@ def run_agent(system_prompt: str, user_message: str) -> str:
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_message},
     ]
+
     response = client.chat.completions.create(
-        messages=messages,
         model="gpt-4o",
+        messages=messages,
     )
+
     return response.choices[0].message.content
 
 

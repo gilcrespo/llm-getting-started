@@ -23,7 +23,9 @@ agent_b = SystemMessage(
 
 def run_agent(agent_system_message: SystemMessage, message: str) -> str:
     messages = [agent_system_message, HumanMessage(content=message)]
+
     response = llm.invoke(messages)
+
     return response.content
 
 

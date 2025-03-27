@@ -31,7 +31,9 @@ while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit"]:
         break
+
     response = chain.invoke(
         input=user_input, config={"configurable": {"session_id": session_id}}
     )
+
     print("Bot:", response.content)
