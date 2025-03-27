@@ -14,8 +14,8 @@ from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
-session_id = "demo_session"
 history_store = {}
+session_id = "demo_session"
 
 
 def get_history(session_id: str) -> InMemoryChatMessageHistory:
