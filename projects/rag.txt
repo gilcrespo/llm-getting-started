@@ -1,0 +1,8 @@
+Introduction to Python
+Python is an interpreted, high-level programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python's extensive standard library makes it a powerful tool for web development, data analysis, artificial intelligence, and scientific computing.
+
+LangChain Framework
+LangChain is a framework designed for building applications with large language models (LLMs). It simplifies the process of integrating LLMs into real-world applications by providing utilities for chaining multiple prompts, managing large documents, and combining outputs from different models. LangChain supports a wide range of LLMs, including OpenAI's GPT models, Hugging Face transformers, and other specialized models.
+
+Retrieval Augmented Generation (RAG)
+RAG is a technique that enhances language model responses by augmenting them with external knowledge. It allows LLMs to retrieve information from a document store or database and use that information to generate more accurate and contextually relevant responses. This method is especially useful when the LLM lacks specific knowledge that may be present in external documents, such as technical manuals, research papers, or FAQs.
