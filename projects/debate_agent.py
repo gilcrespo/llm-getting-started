@@ -1,38 +1,47 @@
 """
-debate_agent.py
+debate_agent_manual.py
 
-A simple LangChain demo where two agents debate a topic using different system prompts.
-Simulates disagreement and turn-based dialogue using ChatOpenAI and message history.
+A basic OpenAI SDK demo where two agents debate a topic using system prompts.
+Simulates disagreement and turn-based dialogue using OpenAI's chat API directly.
 
 Concepts: agent disagreement, system prompts, turn-based dialogue
 """
 
+import os
+
 from dotenv import load_dotenv
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_openai import ChatOpenAI
+from openai import OpenAI
 
 load_dotenv()
 
-llm = ChatOpenAI(model="gpt-4o-mini")
-topic = "Pineapple belongs on pizza."
-agent_a = SystemMessage(content="You are Agent A. You strongly AGREE with the topic.")
-agent_b = SystemMessage(
-    content="You are Agent B. You strongly DISAGREE with the topic."
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
+topic = "Pineapple belongs on pizza."
 
-def run_agent(agent_system_message: SystemMessage, message: str) -> str:
-    messages = [agent_system_message, HumanMessage(content=message)]
+agent_a_prompt = "You are Agent A. You strongly AGREE with the topic."
+agent_b_prompt = "You are Agent B. You strongly DISAGREE with the topic."
 
-    response = llm.invoke(messages)
 
-    return response.content
+def run_agent(system_prompt: str, user_message: str) -> str:
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_message},
+    ]
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=messages,
+    )
+
+    return response.choices[0].message.content
 
 
 message_for_a = f"Debate this topic in 2 short sentences: {topic}"
-response_a = run_agent(agent_a, message_for_a)
+response_a = run_agent(agent_a_prompt, message_for_a)
 print("Agent A:", response_a)
 
 message_for_b = f"{response_a} — respond with your disagreement."
-response_b = run_agent(agent_b, message_for_b)
+response_b = run_agent(agent_b_prompt, message_for_b)
 print("Agent B:", response_b)

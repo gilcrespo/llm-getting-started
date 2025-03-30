@@ -1,39 +1,37 @@
 """
 chatbot_with_memory.py
 
-A basic conversational chatbot with short-term memory using LangChain.
-Remembers previous messages in the current session using RunnableWithMessageHistory.
+A basic conversational chatbot with short-term memory using OpenAI's Python SDK directly.
+Stores chat history in memory (Python list of dicts).
 
 Concepts: conversational flow, interactive session, short-term memory
 """
 
+import os
+
 from dotenv import load_dotenv
-from langchain_core.chat_history import InMemoryChatMessageHistory
-from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain_openai import ChatOpenAI
+from openai import OpenAI
 
 load_dotenv()
 
-history_store = {}
-session_id = "demo_session"
-
-
-def get_history(session_id: str) -> InMemoryChatMessageHistory:
-    if session_id not in history_store:
-        history_store[session_id] = InMemoryChatMessageHistory()
-    return history_store[session_id]
-
-
-llm = ChatOpenAI(model="gpt-4o-mini")
-chain = RunnableWithMessageHistory(llm, get_history)
+chat_history = []
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),
+)
 
 while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit"]:
         break
 
-    response = chain.invoke(
-        input=user_input, config={"configurable": {"session_id": session_id}}
+    chat_history.append({"role": "user", "content": user_input})
+
+    completion = client.chat.completions.create(
+        model="gpt-4o",
+        messages=chat_history,
     )
 
-    print("Bot:", response.content)
+    reply = completion.choices[0].message.content
+    print("Bot:", reply)
+
+    chat_history.append({"role": "assistant", "content": reply})

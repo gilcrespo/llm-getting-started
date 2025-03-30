@@ -1,0 +1,21 @@
+{
+  "trailingComma": "es5",
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "arrowParens": "avoid",
+  "bracketSameLine": false,
+  "plugins": [],
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown",
+        "semi": false,
+        "singleQuote": true,
+        "arrowParens": "avoid",
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}

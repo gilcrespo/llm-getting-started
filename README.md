@@ -74,6 +74,7 @@ Each script lists one or more of the following **concepts** it demonstrates:
 | Simulates disagreement or debate | agent disagreement                      |
 | Builds on previous answers       | turn-based dialogue                     |
 | Explains steps                   | chain of thought                        |
+| Uses external data for context   | RAG (Retrieval Augmented Generation)    |
 
 ### Interaction Patterns
 

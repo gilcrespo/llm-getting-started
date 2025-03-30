@@ -33,3 +33,6 @@ htmlcov/
 # LangChain / LangSmith logs (if any)
 lc-logs/
 langchain_logs/
+
+# Node modules
+node_modules/
