@@ -65,25 +65,27 @@ Each script lists one or more of the following **concepts** it demonstrates:
 
 ### LLM Behaviors (Descriptive)
 
-| Behavior                         | Concept                                 |
-| -------------------------------- | --------------------------------------- |
-| No examples given                | zero-shot reasoning                     |
-| Examples in prompt               | few-shot prompting                      |
-| Explicit persona or tone         | system prompts, persona control         |
-| Responds to previous turns       | short-term memory, conversation history |
-| Simulates disagreement or debate | agent disagreement                      |
-| Builds on previous answers       | turn-based dialogue                     |
-| Explains steps                   | chain of thought                        |
-| Uses external data for context   | RAG (Retrieval Augmented Generation)    |
+| Behavior                             | Concept                                 |
+| ------------------------------------ | --------------------------------------- |
+| No examples given                    | zero-shot reasoning                     |
+| Examples in prompt                   | few-shot prompting                      |
+| Explicit persona or tone             | persona control, system prompts         |
+| Responds to previous turns           | conversation history, short-term memory |
+| Simulates disagreement or debate     | agent disagreement                      |
+| Builds on previous answers           | turn-based dialogue                     |
+| Explains steps                       | chain of thought                        |
+| Uses external data for context       | RAG (Retrieval Augmented Generation)    |
+| Uses retrieved data to augment model | document retrieval, model augmentation  |
 
 ### Interaction Patterns
 
-| Structure/Flow                  | Concept                 |
-| ------------------------------- | ----------------------- |
-| Live user input loop            | interactive session     |
-| Two or more agents taking turns | multi-agent interaction |
-| Message-based prompt passing    | conversational flow     |
-| Uses tools or actions           | tool execution          |
+| Structure/Flow                       | Concept                                            |
+| ------------------------------------ | -------------------------------------------------- |
+| Live user input loop                 | interactive session                                |
+| Two or more agents taking turns      | multi-agent interaction                            |
+| Message-based prompt passing         | conversational flow                                |
+| Uses tools or actions                | tool execution                                     |
+| Semantic search for relevant context | document retrieval, semantic search, vectorization |
 
 Use these as a reference when reading or extending scripts.
 

@@ -1,5 +1,5 @@
 """
-debate_agent_manual.py
+debate_agent.py
 
 A basic OpenAI SDK demo where two agents debate a topic using system prompts.
 Simulates disagreement and turn-based dialogue using OpenAI's chat API directly.

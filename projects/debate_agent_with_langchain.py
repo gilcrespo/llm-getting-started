@@ -14,7 +14,9 @@ from langchain_openai import ChatOpenAI
 load_dotenv()
 
 llm = ChatOpenAI(model="gpt-4o-mini")
+
 topic = "Pineapple belongs on pizza."
+
 agent_a = SystemMessage(content="You are Agent A. You strongly AGREE with the topic.")
 agent_b = SystemMessage(
     content="You are Agent B. You strongly DISAGREE with the topic."
