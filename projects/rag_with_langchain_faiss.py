@@ -13,7 +13,6 @@ See:
 https://faiss.ai/
 """
 
-import logging
 import os
 
 import faiss
@@ -22,10 +21,6 @@ from dotenv import load_dotenv
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-
-logging.basicConfig(
-    level=logging.INFO, format="%(message)s", handlers=[logging.StreamHandler()]
-)
 
 load_dotenv()
 
