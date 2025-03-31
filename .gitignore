@@ -36,3 +36,6 @@ langchain_logs/
 
 # Node modules
 node_modules/
+
+# Chroma DB
+db/
