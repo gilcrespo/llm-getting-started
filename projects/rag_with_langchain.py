@@ -36,9 +36,6 @@ documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0)
 docs = text_splitter.split_documents(documents)
 
-# Initialize the embeddings
-openai_embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
-
 
 # Create an in-memory FAISS index
 def create_in_memory_faiss_index(docs, embeddings):
@@ -52,7 +49,7 @@ def create_in_memory_faiss_index(docs, embeddings):
     return index, docs
 
 
-# Create the FAISS index in-memory
+openai_embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
 index, docs = create_in_memory_faiss_index(docs, openai_embeddings)
 
 
