@@ -14,7 +14,7 @@ from openai import OpenAI
 
 load_dotenv()
 
-client = OpenAI(
+llm = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
@@ -24,15 +24,15 @@ agent_a_prompt = "You are Agent A. You strongly AGREE with the topic."
 agent_b_prompt = "You are Agent B. You strongly DISAGREE with the topic."
 
 
-def run_agent(system_prompt: str, user_message: str) -> str:
+def run_agent(system_prompt: str, user_input: str) -> str:
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_message},
+        {"role": "user", "content": user_input},
     ]
 
-    response = client.chat.completions.create(
-        model="gpt-4o",
+    response = llm.chat.completions.create(
         messages=messages,
+        model="gpt-4o",
     )
 
     return response.choices[0].message.content

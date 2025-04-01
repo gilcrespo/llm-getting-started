@@ -15,7 +15,7 @@ from openai import OpenAI
 load_dotenv()
 
 chat_history = []
-client = OpenAI(
+llm = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
@@ -26,9 +26,9 @@ while True:
 
     chat_history.append({"role": "user", "content": user_input})
 
-    completion = client.chat.completions.create(
-        model="gpt-4o",
+    completion = llm.chat.completions.create(
         messages=chat_history,
+        model="gpt-4o",
     )
 
     reply = completion.choices[0].message.content
