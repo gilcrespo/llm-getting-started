@@ -54,7 +54,7 @@ index, docs = create_in_memory_faiss_index(docs, openai_embeddings)
 def query_faiss_index(query, index, docs, embeddings):
     query_embedding = embeddings.embed_query(query)
     query_embedding = np.array(query_embedding).astype("float32")
-    _, indices = index.search(query_embedding.reshape(1, -1), k=3)
+    __, indices = index.search(query_embedding.reshape(1, -1), k=3)
 
     relevant_docs = [docs[i] for i in indices[0]]
     return relevant_docs

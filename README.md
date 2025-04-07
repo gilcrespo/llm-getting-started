@@ -45,7 +45,7 @@ ruff check .
 
 This repo will grow over time. Projects are grouped by complexity to help you build intuition as LLM concepts evolve from simple to advanced.
 
-✅ = Implemented & ready to run  
+✅ = Implemented & ready to run
 💡 = Planned or conceptual for now
 
 | Level           | Project                         | Concepts Practiced                     | Status |
