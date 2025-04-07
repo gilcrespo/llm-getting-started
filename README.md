@@ -12,7 +12,7 @@ A growing collection of practical, beginner-friendly projects using **Python**, 
 git clone https://github.com/mlane/llm-getting-started.git
 cd llm-getting-started
 
-python3 -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
@@ -20,7 +20,7 @@ cp .env.sample .env
 # Fill in your OpenAI / LangSmith API keys
 
 # Run an example project
-python3 projects/debate_agent.py
+python3.11 projects/debate_agent.py
 ```
 
 ---
