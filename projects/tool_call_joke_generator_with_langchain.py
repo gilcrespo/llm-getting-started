@@ -1,5 +1,5 @@
 """
-tool_call_joke_generator.py
+tool_call_joke_generator_with_langchain.py
 
 A simple LangChain demo where the model uses a registered tool to fetch a random programming joke.
 Illustrates OpenAI-style tool execution with structured input and callable output.
