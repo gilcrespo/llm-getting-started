@@ -30,6 +30,7 @@ chain = RunnableWithMessageHistory(llm, get_history)
 while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit"]:
+        print("Goodbye")
         break
 
     response = chain.invoke(
