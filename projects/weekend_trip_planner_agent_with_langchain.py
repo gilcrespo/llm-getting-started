@@ -21,8 +21,8 @@ load_dotenv()
 def get_flight_price(destination: str) -> str:
     """Returns estimated flight cost from New York to the city."""
     fake_prices = {
-        "Miami": 250,
         "Chicago": 150,
+        "Miami": 250,
         "San Diego": 400,
     }
     return f"${fake_prices.get(destination, 'unknown')}"
@@ -32,8 +32,8 @@ def get_flight_price(destination: str) -> str:
 def get_food_rating(destination: str) -> str:
     """Returns a food scene rating for a city."""
     fake_ratings = {
-        "Miami": "8/10 — vibrant Latin cuisine",
         "Chicago": "9/10 — world-class deep dish and fine dining",
+        "Miami": "8/10 — vibrant Latin cuisine",
         "San Diego": "7/10 — great coastal food",
     }
     return fake_ratings.get(destination, "unknown")
@@ -43,8 +43,8 @@ def get_food_rating(destination: str) -> str:
 def get_weather(destination: str) -> str:
     """Returns a weather description for the city."""
     fake_weather = {
-        "Miami": "warm and sunny",
         "Chicago": "cold and windy",
+        "Miami": "warm and sunny",
         "San Diego": "mild and clear",
     }
     return fake_weather.get(destination, "unknown")
@@ -76,7 +76,8 @@ prompt = ChatPromptTemplate.from_messages(
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 agent = create_openai_tools_agent(llm, tools, prompt)
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+# Set verbose=True to see agent reasoning steps (Thought > Action > Observation)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=False)
 
 
 query = "Find a warm, affordable city with good food for a weekend trip from New York."
