@@ -22,6 +22,7 @@ llm = OpenAI(
 while True:
     user_input = input("You: ")
     if user_input.lower() in ["exit", "quit"]:
+        print("Goodbye")
         break
 
     chat_history.append({"role": "user", "content": user_input})
