@@ -25,7 +25,7 @@ def pipeline(user_input: str):
 
     response = openai.chat.completions.create(
         messages=messages,
-        model="gpt-4o",
+        model="gpt-4o-mini",
     )
 
     print(f"Response: {response.choices[0].message.content}")

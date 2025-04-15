@@ -21,6 +21,9 @@ cp .env.sample .env
 
 # Run an example project
 python3.11 projects/debate_agent.py
+
+# Set up pre-commit hooks
+pre-commit install  # (run once per machine)
 ```
 
 ---

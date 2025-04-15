@@ -31,7 +31,7 @@ current_message = starting_prompt
 
 print("Starting Markov Chain Text Generation\n")
 
-num_steps = 5
+num_steps = 3
 for step in range(num_steps):
     print(f"Step {step + 1}: {current_message}")
     current_message = run_markov_chain_step(current_message)

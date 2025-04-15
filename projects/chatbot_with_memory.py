@@ -28,7 +28,7 @@ while True:
 
     completion = llm.chat.completions.create(
         messages=chat_history,
-        model="gpt-4o",
+        model="gpt-4o-mini",
     )
 
     reply = completion.choices[0].message.content

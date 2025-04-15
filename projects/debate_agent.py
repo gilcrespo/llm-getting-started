@@ -32,7 +32,7 @@ def run_agent(system_prompt: str, user_input: str) -> str:
 
     response = llm.chat.completions.create(
         messages=messages,
-        model="gpt-4o",
+        model="gpt-4o-mini",
     )
 
     return response.choices[0].message.content
