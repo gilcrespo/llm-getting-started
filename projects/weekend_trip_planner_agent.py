@@ -136,10 +136,10 @@ for call in tool_calls:
 
     messages.append(
         {
-            "tool_call_id": call.id,
-            "role": "tool",
             "name": name,
             "content": result,
+            "role": "tool",
+            "tool_call_id": call.id,
         }
     )
 
