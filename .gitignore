@@ -39,3 +39,6 @@ node_modules/
 
 # Chroma DB
 db/
+
+# .gitignore
+package-lock.json
